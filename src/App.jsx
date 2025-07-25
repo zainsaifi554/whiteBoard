@@ -7,13 +7,14 @@ import Tools from './tools';
 
 
 function App() {
- const appID = 709484502; 
- const server = "wss://webliveroom709484502-api.coolzcloud.com/ws"
- const userID = "shahji"
-  const userName = "shahji"
-  const roomID = "4750"
+  const appID = Number(import.meta.env.VITE_APP_ID);
+  const server = import.meta.env.VITE_SERVER;
+  const userID = import.meta.env.VITE_USER_ID;
+  const userName = import.meta.env.VITE_USER_NAME;
+  const roomID = import.meta.env.VITE_ROOM_ID;
+  const token = import.meta.env.VITE_TOKEN;
+  
   const [currentTool, setCurrentTool] =useState(null);
- const token = "04AAAAAGiDYIEADMj2JtSltvlJNAYrQgCvHwLOgOgCa9PGGn183qL4Df6zRgBxHsqKDiJKS+rs03bjL0ZUdoa/PiNWw8bBbSC2FwSrOvRnjoVI8L/JOIMPUJR8xmE29umAhN1QmCVuImqBpvF5LU3U3XNYN1XBpXETDRdvJiMYbQb37DkIS3t1hVGSQd70DtXiM0TTfbktooz9V5Gs6iAstYPdbMOsCZI4XpFQYFJOfrcq98XcgusQQVLzL1E8LUkvPOi5Yz7nzwE="
 const zg = new ZegoExpressEngine(appID, server);
 const zegoSuperBoard = ZegoSuperBoardManager.getInstance();
 const initBoard = async () => {
